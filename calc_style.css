@@ -1,0 +1,390 @@
+/* Reset some basic styles */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width:100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Background and container styling */
+body {
+ 
+    background-color: #000000;
+    background-image: url("edit 3.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    background-attachment: fixed;
+    color: #000000;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+/* Calculator styling */
+.calculator {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    /*added*/
+    background: #0000004e;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #00000000;
+}
+
+.calculator_button {
+    margin-left: 40px;
+}
+
+.top_row {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(1, 0px);
+    margin-bottom: 40px;
+
+
+}
+
+/* Text bar styling */
+.text-bar-container {
+    width: 60%;
+    margin-top: 80px;
+    margin-left: 10px;
+    padding:0px;
+
+    margin-bottom: 0px;
+}
+
+.text-bar {
+    width: 100%;
+    padding-top: 10px;
+    font-size: 70px;
+    text-align: right;
+    background-color: #00000045;
+    color: #00ddff;
+    border-radius: 5px;
+    outline: rgb(0, 255, 116) solid 2px;
+    outline-offset: 0px;
+    transition: all;
+    cursor: text;
+
+
+}
+
+
+.text-bar:hover {
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 0px 30px 4px rgb(0, 255, 0);
+
+}
+
+.text-bar:focus {
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 0px 30px 10px rgba(0, 255, 0, 0.536);
+}
+
+/* Grid layout for buttons */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: repeat(4, 30px);
+}
+
+/* Button styling */
+.calc_button {
+    font-family: "Salsa", cursive;
+    font-weight: 700;
+    font-style: normal;
+    width: 80px;
+    height: 80px;
+    font-size: 50px;
+    color: #00E2FF;
+    background-color: #0000001b;
+    border: solid #00FF74 4px;
+    border-radius: 30px;
+    cursor: pointer;
+    opacity: 100%;
+    box-shadow: 0px 0px 21px 4px rgba(0, 255, 228, 0.98);
+    transition: background-color 0.1s cubic-bezier(.05, 1.03, .96, .01), box-shadow 0.1s ease-in-out 0s;
+    transition-property: all;
+
+}
+
+
+.calc_button:hover {
+    box-shadow: 0px 0px 20px 4px rgb(0, 255, 0);
+    border: solid #00E2FF 2px;
+    transform: translate(2px, 5px) scale(1.09);
+    transition: transform 0.2s linear;
+
+}
+
+@keyframes pulsefocuse {
+    0% {
+        box-shadow: 0px 0px 20px 4px rgb(0, 255, 0);
+    }
+
+    12.5% {
+        box-shadow: 0px 0px 20px 4px rgba(0, 255, 0, 0.899);
+    }
+
+    25% {
+        box-shadow: 0px 0px 20px 4px rgba(0, 255, 0, 0.708);
+    }
+
+    50% {
+        box-shadow: 0px 0px 20px 4px rgba(0, 255, 0, 0.535);
+    }
+
+    62.5% {
+
+        box-shadow: 0px 0px 20px 4px rgba(0, 255, 0, 0.341);
+    }
+
+    75% {
+        box-shadow: 0px 0px 20px 4px rgba(0, 255, 0, 0.219);
+    }
+
+    100% {
+        box-shadow: 0px 0px 20px 4px rgba(0, 255, 0, 0);
+    }
+}
+
+@keyframes pulsefocuse_reverse {
+    from {
+        box-shadow: 0px 0px 20px 4px rgba(0, 255, 0, 0);
+
+    }
+
+    to {
+        box-shadow: 0px 0px 20px 4px rgba(0, 255, 228, 0.98);
+    }
+}
+
+/* all button */
+.calc_button:focus {
+    box-shadow: 0px 0px 20px 4px rgb(0, 255, 0);
+    border: solid #00E2FF 4px;
+    transform: translate(2px, 5px) scale(1.09);
+    transition: transform 1s linear;
+    animation: pulsefocuse 0.7s 1;
+    animation: pulsefocuse_reverse 0.7s 1;
+}
+
+.calc_button:focus {
+    box-shadow: 0px 0px 20px 4px rgba(0, 255, 228, 0.98);
+    border: solid #00ff74 4px;
+    transform: translate(2px, 5px) scale(1.09);
+    transition: transform 0.2s linear;
+}
+
+/* clear botton */
+.clear_button:hover {
+    box-shadow: 0px 0px 20px 4px rgb(255, 0, 0);
+    border: solid #ff0000 2px;
+    transform: translate(2px, 5px) scale(1.09);
+    transition: transform 0.2s linear;
+}
+
+@keyframes clearPulse {
+    0% {
+        box-shadow: 0px 0px 20px 4px rgb(255, 0, 0);
+    }
+
+    12.5% {
+        box-shadow: 0px 0px 20px 4px rgba(255, 0, 0, 0.899);
+    }
+
+    25% {
+        box-shadow: 0px 0px 20px 4px rgba(255, 0, 0, 0.708);
+    }
+
+    50% {
+        box-shadow: 0px 0px 20px 4px rgba(255, 0, 0, 0.535);
+    }
+
+    62.5% {
+
+        box-shadow: 0px 0px 20px 4px rgba(255, 0, 0, 0.341);
+    }
+
+    75% {
+        box-shadow: 0px 0px 20px 4px rgba(255, 0, 0, 0.219);
+    }
+
+    100% {
+        box-shadow: 0px 0px 20px 4px rgba(0, 255, 0, 0);
+    }
+}
+
+@keyframes clearPulse_reverse {
+    from {
+        box-shadow: 0px 0px 20px 4px rgba(0, 255, 0, 0);
+    }
+
+    to {
+        box-shadow: 0px 0px 20px 4px rgba(0, 255, 228, 0.98);
+    }
+}
+
+.clear_button:focus {
+    box-shadow: 0px 0px 20px 4px rgb(255, 0, 0);
+    border: solid #ff0000 4px;
+    transform: translate(2px, 5px) scale(1.09);
+    transition: transform 0.2s linear;
+    animation: clearPulse 0.7s 1;
+    animation: clearPulse_reverse 0.7s 1;
+}
+
+.clear_button:focus {
+    box-shadow: 0px 0px 20px 4px rgba(0, 255, 228, 0.98);
+    border: solid #00ff74 4px;
+    transform: translate(2px, 5px) scale(1.09);
+    transition: transform 0.2s linear;
+}
+
+.zero_button {
+    margin-left: 5px;
+
+}
+
+.equality_sign_in {
+    margin-left: 12px;
+    padding-left: 70px;
+    padding-top: 5px;
+    padding-right: 130px;
+}
+@media (max-width: 768px) {
+    .calculator {
+        max-width: 100%;
+        max-height:10000px; /* Full width on smaller devices */
+    }
+
+    .calc_button {
+        height: 80px; /* Adjust height for smaller screens */
+        font-size: 50px; /* Slightly smaller font */
+    }
+
+    .text-bar {
+        font-size: 2rem;
+        padding-top: 1px; /* Smaller text for small screens */
+    }
+}
+
+/* Further adjustments for very small screens (phones) */
+@media (max-width: 480px) {
+    .calc_button {
+        height: 80px; 
+        width:80px;/* Further reduced height */
+        font-size: 40px; /* Smaller text for phones */
+    }
+    .text-bar-container {
+    
+    align-items: center;
+    }
+    .text-bar {
+        font-size: 70px;
+        width: 100%;
+        margin-left:0px;
+        padding: 1px; /* Smaller text size */
+        align-items: center;
+    }
+}
+
+
+.equality_sign_in:hover {
+    box-shadow: 0px 0px 20px 4px #ffcc00;
+    border: solid #ffcc00 2px;
+    transform: translate(2px, 5px) scale(1.09);
+    transition: transform 0.2s linear;
+}
+
+@keyframes equalityPulse {
+    0% {
+        box-shadow: 0px 0px 20px 4px rgb(255, 204, 0);
+    }
+
+    12.5% {
+        box-shadow: 0px 0px 20px 4px rgba(255, 204, 0, 0.899);
+        ;
+
+    }
+
+    25% {
+        box-shadow: 0px 0px 20px 4px rgba(255, 204, 0, 0.708);
+        ;
+
+    }
+
+    50% {
+        box-shadow: 0px 0px 20px 4px rgba(255, 204, 0, 0.514);
+        ;
+    }
+
+    62.5% {
+
+        box-shadow: 0px 0px 20px 4px rgba(255, 204, 0, 0.341);
+        ;
+
+
+    }
+
+    75% {
+        box-shadow: 0px 0px 20px 4px rgba(255, 204, 0, 0.219);
+        ;
+
+    }
+
+    100% {
+        box-shadow: 0px 0px 20px 4px rgba(0, 255, 0, 0);
+    }
+}
+@keyframes equalityPulse_reverse {
+    from {
+        box-shadow: 0px 0px 20px 4px rgba(0, 255, 0, 0);
+    }
+
+    to {
+        box-shadow: 0px 0px 20px 4px rgba(0, 255, 228, 0.98);
+    }
+}
+
+
+.equality_sign_in:focus {
+    box-shadow: 0px 0px 20px 4px rgb(255, 0, 0);
+    border: solid #ff0000 4px;
+    transform: translate(2px, 5px) scale(1.09);
+    transition: transform 0.2s linear;
+    animation: equalityPulse 0.7s 1;
+    animation: equalityPulse_reverse 0.7s 1;
+
+}
+
+.equality_sign_in:focus {
+    box-shadow: 0px 0px 20px 4px rgba(0, 255, 228, 0.98);
+    border: solid #00ff74 4px;
+    transform: translate(2px, 5px) scale(1.09);
+    transition: transform 0.2s linear;
+}
+
+/* Specific style for the zero button to span two columns */
+.row_5 {
+    grid-column: span 3;
+}
